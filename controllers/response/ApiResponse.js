@@ -1,14 +1,14 @@
 const ApiResponse = (
-  message,
-  data = null,
+  data,
+  totalRecord = 0,
   statusCode = 200,
-  totalRecord = 0
+  message = "Successfully"
 ) => {
   return {
     message,
-    data,
     statusCode,
     totalRecord,
+    data,
   };
 };
 

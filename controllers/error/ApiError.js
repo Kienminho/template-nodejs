@@ -1,7 +1,8 @@
 module.exports = class ApiError extends Error {
-  constructor(message, status, error) {
-    super(message);
-    this.status = status;
-    this.error = error;
+  constructor(apiResponse) {
+    super(apiResponse.message);
+    this.statusCode = apiResponse.statusCode;
+    this.error = apiResponse.data;
+    this.totalRecord = apiResponse.totalRecord;
   }
 };

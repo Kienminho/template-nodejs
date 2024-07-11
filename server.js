@@ -90,7 +90,14 @@ create https (production) server instance
 /*==============================
 start server listen
 ==============================*/
-httpServer.listen(HTTP_PORT, () => console.log("http server started!"));
+httpServer.listen(HTTP_PORT, () => {
+  console.log("http server started!");
+  console.log(
+    "Listening on %s:%s",
+    httpServer.address().address,
+    httpServer.address().port
+  );
+});
 // httpsServer.listen(HTTPS_PORT, SERVER_DOMAIN, async () => {
 //   if (process.env.ENVIRONMENT === "development")
 //     console.log(
